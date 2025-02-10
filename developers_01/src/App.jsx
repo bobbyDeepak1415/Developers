@@ -9,6 +9,7 @@ import CampusLife from "./pages/CampusLife";
 import EventsNews from "./pages/EventsNews";
 import Contact from "./pages/Contact";
 import Alumni from "./pages/Alumni";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -18,12 +19,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/admissions" element={<Admissions />} />
-        <Route path="/academic-programs" element={<AcademicPrograms />} />
+        <Route path="/programs" element={<AcademicPrograms />} />
         <Route path="/campus-life" element={<CampusLife />} />
         <Route path="/events-news" element={<EventsNews />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/alumni" element={<Alumni />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
