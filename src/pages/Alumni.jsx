@@ -1,4 +1,3 @@
-/pages/Alumni.jsx
 import React from "react";
 
 const Alumni = () => {
