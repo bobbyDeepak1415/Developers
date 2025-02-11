@@ -1,17 +1,56 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Custom arrows
 
-const ImageCarousel = () => {
+// Custom Left Arrow
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full cursor-pointer z-10"
+    onClick={onClick}
+  >
+    <FaArrowLeft size={20} />
+  </div>
+);
+
+// Custom Right Arrow
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full cursor-pointer z-10"
+    onClick={onClick}
+  >
+    <FaArrowRight size={20} />
+  </div>
+);
+
+const ImageCarousel = ({ images }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
   return (
-    <Swiper spaceBetween={50} slidesPerView={1}>
-      <SwiperSlide>
-        <img src="/images/campus1.jpg" alt="Campus 1" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="/images/campus2.jpg" alt="Campus 2" />
-      </SwiperSlide>
-    </Swiper>
+    <div className="w-full max-w-4xl mx-auto">
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-[400px] object-cover"
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
