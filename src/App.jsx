@@ -4,8 +4,8 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Admissions from "./pages/Admissions";
-// import AcademicPrograms from "./pages/AcademicPrograms";
 import CampusLife from "./pages/CampusLife";
+import AcademicPrograms from "./pages/AcademicPrograms";
 import EventsNews from "./pages/EventsNews";
 import Contact from "./pages/Contact";
 import Alumni from "./pages/Alumni";
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/admissions" element={<Admissions />} />
-        {/* <Route path="/programs" element={<AcademicPrograms />} /> */}
+        <Route path="/programs" element={<AcademicPrograms />} />
         <Route path="/campus-life" element={<CampusLife />} />
         <Route path="/events-news" element={<EventsNews />} />
         <Route path="/contact" element={<Contact />} />
