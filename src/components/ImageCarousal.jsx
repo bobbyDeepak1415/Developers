@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Custom arrows
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 // Custom Left Arrow
 const PrevArrow = ({ onClick }) => (
@@ -35,13 +35,26 @@ const ImageCarousel = ({ images }) => {
     autoplaySpeed: 3000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    appendDots: (dots) => (
+      <div
+        style={{
+          position: "absolute",
+          bottom: "10%",
+          width: "100%",
+          // opacity: 60,
+        }}
+      >
+        <ul className="flex justify-center">{dots}</ul>
+      </div>
+    ),
+    dotsClass: "slick-dots slick-thumb",
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto relative">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index}>
+          <div key={index} className="relative">
             <img
               src={image}
               alt={`Slide ${index + 1}`}

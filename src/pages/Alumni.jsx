@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Alumni = () => {
-  // Sample Alumni Success Stories
   const testimonials = [
     {
       name: "Amit Sharma",
@@ -45,25 +44,6 @@ const Alumni = () => {
     },
   ];
 
-  // Alumni Registration Form State
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    batch: "",
-    profession: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem("alumniData", JSON.stringify(formData));
-    alert("Registration successful! Your details have been saved.");
-    setFormData({ name: "", email: "", batch: "", profession: "" });
-  };
-
   return (
     <div className="container mx-auto p-6">
       <h2 className="text-3xl font-bold text-center">Our Alumni</h2>
@@ -71,12 +51,19 @@ const Alumni = () => {
         Meet our successful alumni who are making a difference in the world.
       </p>
 
-      {/* Alumni Success Stories */}
+      <h2>
+        BMSCE Alumni can be found all over the world. BMSCE takes pride in
+        educating students since 1946 in various fields of Engineering and
+        continues to provide world-class education with more emphasis on
+        research and development.
+      </h2>
+
+      {/* Alumni Success Stories with Hover Effect */}
       <section className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((alumni, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg p-4 text-center"
+            className="bg-white shadow-md rounded-lg p-4 text-center transform transition duration-300  ease-in-out hover:scale-105 hover:shadow-lg"
           >
             <img
               src={alumni.image}
@@ -90,84 +77,8 @@ const Alumni = () => {
           </div>
         ))}
       </section>
-
-      {/* Alumni Registration Form */}
-      <section className="mt-10">
-        <h3 className="text-2xl font-semibold">Alumni Registration</h3>
-        <p className="text-gray-700 mt-2">
-          If you are a former student, fill out your details to stay connected.
-        </p>
-        <form
-          className="mt-4 p-6 bg-gray-100 rounded-lg shadow-md"
-          onSubmit={handleSubmit}
-        >
-          <div className="mb-4">
-            <label className="block font-medium">Full Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded-md"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block font-medium">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded-md"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block font-medium">Batch Year</label>
-            <input
-              type="text"
-              name="batch"
-              value={formData.batch}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded-md"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block font-medium">Current Profession</label>
-            <input
-              type="text"
-              name="profession"
-              value={formData.profession}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded-md"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-2 px-4 rounded-md"
-          >
-            Submit
-          </button>
-        </form>
-      </section>
     </div>
   );
 };
 
 export default Alumni;
-
-// const homeImages = [
-//   "/images/image1.jpg",
-//   "/images/image2.jpg",
-//   "/images/image3.jpg",
-//   "/images/image4.jpg",
-//   "/images/image5.jpg",
-//   "/images/image6.jpg",
-// ];

@@ -24,7 +24,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/academic-programs" className="hover:underline">
+              <Link to="/programs" className="hover:underline">
                 Programs
               </Link>
             </li>

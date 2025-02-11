@@ -1,8 +1,6 @@
 import React from "react";
 
 const AcademicPrograms = () => {
-
-
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto">
