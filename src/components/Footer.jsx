@@ -65,16 +65,28 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-2 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.facebook.com/adobecreativecloud"
+              className="text-gray-400 hover:text-white"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://x.com/elonmusk"
+              className="text-gray-400 hover:text-white"
+            >
               <FaTwitter />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.instagram.com/ssssangha/"
+              className="text-gray-400 hover:text-white"
+            >
               <FaInstagram />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.linkedin.com/groups/63192/?highlightedUpdateUrn=urn%3Ali%3AgroupPost%3A63192-7295350984766078977&q=highlightedFeedForGroups"
+              className="text-gray-400 hover:text-white"
+            >
               <FaLinkedin />
             </a>
           </div>
